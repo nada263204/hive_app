@@ -15,6 +15,7 @@ class TestScreen extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () async {
+                // Open Hive Box Future must be awaited
                 box = await Hive.openBox("test");
               },
               child: const Text("Open Box"),
@@ -22,31 +23,18 @@ class TestScreen extends StatelessWidget {
 
             ElevatedButton(
               onPressed: () {
-                box.putAll({
-                  "name": "Mohamed",
-                  9: true,
-                  "age": 30,
-                  0: false,
-                  2: [9, 2, 6],
-                });
+                box.addAll([123, 456, 789]);
               },
               child: const Text("Put Data"),
             ),
-
             ElevatedButton(
               onPressed: () {
-                box.put(2, "test at method");
-              },
-              child: const Text("Put Method"),
-            ),
-
-            ElevatedButton(
-              onPressed: () {
-                print(box.get("name"));
-                print(box.get(9));
-                print(box.get("age"));
                 print(box.get(0));
-                print(box.get(2));
+                print(box.get(79));
+                print(box.get(80));
+                print(box.get(81));
+                print(box.get(82));
+                print(box.get(83));
               },
               child: const Text("Display Box"),
             ),
