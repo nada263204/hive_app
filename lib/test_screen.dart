@@ -35,6 +35,11 @@ class TestScreen extends StatelessWidget {
                 print(box.get(81));
                 print(box.get(82));
                 print(box.get(83));
+                print(box.values.toList());
+                box.values.forEach((element) {
+                  print(element);
+                });
+                box.clear();
               },
               child: const Text("Display Box"),
             ),
